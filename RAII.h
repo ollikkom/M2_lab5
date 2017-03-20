@@ -10,8 +10,8 @@ class RAII {
 public:
     ~RAII()
     {
-        pP->Close();
-        std::cout << "\nExit. All successfully closed." << std::endl;
+        if(pP != nullptr)
+            pP->Close();
     }
 
     RAII()
